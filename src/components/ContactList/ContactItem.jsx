@@ -1,5 +1,5 @@
 import { Button } from '../ContactForm/ContactForm.styled';
-import { Span, Text } from './ContactList.styled';
+import { Name, Number, ContactItemStyled } from './ContactList.styled';
 import PropTypes from 'prop-types';
 
 export const ContactItem = ({id, name, number, onDeleteTransit}) => {
@@ -8,7 +8,7 @@ export const ContactItem = ({id, name, number, onDeleteTransit}) => {
         onDeleteTransit(id)
     };
 
-    return <Text>{name}: <Span>{number}</Span><Button onClick={onDelete}>Delete</Button></Text>
+    return <ContactItemStyled><Name>{name}: </Name><Number>{number}</Number><Button onClick={onDelete}>Delete</Button></ContactItemStyled>
 };
 
 
