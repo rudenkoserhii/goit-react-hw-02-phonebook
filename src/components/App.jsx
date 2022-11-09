@@ -3,6 +3,7 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
 import { Wrapper, H1, H2} from './Styled/Styled';
 
 export class App extends Component {
@@ -18,7 +19,7 @@ state = {
 
 addContact = (contact) => {
   if(this.state.contacts.some(({ name }) => contact.name === name)) {
-  window.alert(`${contact.name}is already in contacts`)}
+  Notiflix.Notify.warning(`${contact.name}is already in contacts`)}
   else {contact['id'] = nanoid();
   this.setState(prevState => ({ contacts: [contact, ...prevState.contacts]}))}
 };
