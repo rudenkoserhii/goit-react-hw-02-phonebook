@@ -10,21 +10,13 @@ state = {
 }
 
 handlerChange = (e) => {
-console.log(e.currentTarget.value)
     const { name, value } = e.currentTarget;
-
     this.setState({ [name]: value });
-console.log(this.state)
-
-
 }
 
 handlerSubmit = e => {
     e.preventDefault();
-
     this.props.onSubmit(this.state);
-console.log(this.state)
-
     e.target.reset();
 };
 
@@ -40,7 +32,8 @@ console.log(this.state)
                     id={nameId}
                     name="name"
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                    title="Name may contain only letters, apostrophe, dash and spaces. 
+                    For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                     onChange={this.handlerChange}/>
                 </Label>

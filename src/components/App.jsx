@@ -18,10 +18,11 @@ state = {
 };
 
 addContact = (contact) => {
-  if(this.state.contacts.some(({ name }) => contact.name === name)) {
-  Notiflix.Notify.warning(`${contact.name}is already in contacts`)}
-  else {contact['id'] = nanoid();
-  this.setState(prevState => ({ contacts: [contact, ...prevState.contacts]}))}
+  if (this.state.contacts.some(({ name }) => contact.name === name)) {
+    Notiflix.Notify.warning(`${contact.name}is already in contacts`);
+    return}
+  contact['id'] = nanoid();
+  this.setState(prevState => ({ contacts: [contact, ...prevState.contacts]}));
 };
 
 filtered = (e) => {

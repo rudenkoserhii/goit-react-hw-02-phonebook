@@ -8,7 +8,11 @@ export const ContactItem = ({id, name, number, onDeleteTransit}) => {
         onDeleteTransit(id)
     };
 
-    return <ContactItemStyled><Name>{name}: </Name><Number>{number}</Number><Button onClick={onDelete}>Delete</Button></ContactItemStyled>
+    return  <ContactItemStyled>
+                <Name>{name}: </Name>
+                <Number>{number}</Number>
+                <Button onClick={onDelete}>Delete</Button>
+            </ContactItemStyled>
 };
 
 
